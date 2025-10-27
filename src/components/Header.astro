@@ -1,8 +1,33 @@
 ---
 import Navigation from './Navigation.astro';
+import logo from '../assets/missionpatchclear.png';
 ---
-<header>
+<header class="main-header">
+  <div class="header-top">
+    <img src={logo.src} alt="CubeSat Logo"/>
+  </div>
   <nav>
     <Navigation />
   </nav>
 </header>
+
+<style>
+.main-header {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border-bottom: 1px solid #222;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.nasa-logo {
+  width: 45px;
+  height: 45px;
+}
+</style>
