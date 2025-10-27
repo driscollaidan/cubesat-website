@@ -12,6 +12,14 @@ import logo from '../assets/missionpatchclear.png';
 </header>
 
 <style>
+header,
+.main-header,
+nav {
+  width: 100vw; /* force full viewport width */
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+}
+
 .main-header {
   width: 100%;
   background-color: #000;
@@ -26,7 +34,7 @@ import logo from '../assets/missionpatchclear.png';
   padding: 0.5rem 0;
 }
 
-.nasa-logo {
+.logo {
   width: 45px;
   height: 45px;
 }
