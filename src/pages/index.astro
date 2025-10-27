@@ -10,48 +10,52 @@ const pageTitle = "Home";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
   <body>
     <Header />
-    <h1>{pageTitle}</h1>
-	<p>
-		Mission Objectives
 
-		MO.1
-		Operate the PMPD propulsion system in LEO to execute an orbit-raising or lowering maneuver.
+    <main class="main-content">
+      <h1>{pageTitle}</h1>
+		<p>
+			Mission Objectives
 
-		MO.2
-		Determine the key performance metrics of the PMPD system in LEO including impulse bit, specific impulse, and total efficiency of power to thrust conversion.
+			MO.1
+			Operate the PMPD propulsion system in LEO to execute an orbit-raising or lowering maneuver.
 
-		MO.3
-		Continuously record the propulsion system health metrics during thruster operation including average power consumption, propellant injector temperature, propellant tank level, and current/voltage waveforms for the discharge and igniter circuits.
+			MO.2
+			Determine the key performance metrics of the PMPD system in LEO including impulse bit, specific impulse, and total efficiency of power to thrust conversion.
 
-		Overall CONOPS and Experiment Plan
+			MO.3
+			Continuously record the propulsion system health metrics during thruster operation including average power consumption, propellant injector temperature, propellant tank level, and current/voltage waveforms for the discharge and igniter circuits.
 
-		FE.1 (1.5 hours)
-		Thruster checkouts
-		* Fire single prograde pulse
-		* Measure thruster health metrics (voltage and current waveforms)
-		* Downlink results + wait to proceed
+			Overall CONOPS and Experiment Plan
 
-		FE.2 (24 hours)
-		Short-duration performance characterization
-		Repeatedly pulse thruster and coast to recharge
-		Gather data to allow for performance metrics (impulse bit, specific impulse, total efficiency)
+			FE.1 (1.5 hours)
+			Thruster checkouts
+			* Fire single prograde pulse
+			* Measure thruster health metrics (voltage and current waveforms)
+			* Downlink results + wait to proceed
 
-		FE.3 (1-2 months)
-		Long-duration performance characterization
-		* Pulse 1 million times, in repeated orbit raising and lowering maneuvers
-		* Stop periodically for systems check, data downlink, and orbit characterization
-		* Collect health and performance metrics to reduce uncertainty for performance parameters and monitor the change in thruster behavior over its lifetime.
-	</p>
-	<img src={conops_image.src} alt="Mission ConOps"/>
+			FE.2 (24 hours)
+			Short-duration performance characterization
+			Repeatedly pulse thruster and coast to recharge
+			Gather data to allow for performance metrics (impulse bit, specific impulse, total efficiency)
+
+			FE.3 (1-2 months)
+			Long-duration performance characterization
+			* Pulse 1 million times, in repeated orbit raising and lowering maneuvers
+			* Stop periodically for systems check, data downlink, and orbit characterization
+			* Collect health and performance metrics to reduce uncertainty for performance parameters and monitor the change in thruster behavior over its lifetime.
+		</p>
+      <img src={conops_image.src} alt="Mission ConOps" style="width:100%; max-width:800px; display:block; margin:auto;" />
+    </main>
+
     <Footer />
   </body>
 </html>

@@ -1,14 +1,13 @@
 html {
   background-color: #f1f5f9;
-  font-family: "Open Sans, Arial, sans-serif";
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5
+  line-height: 1.5;
 }
 
 * {
@@ -18,4 +17,11 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+}
+
+/* Create a wrapper for the main centered content */
+.main-content {
+  margin: 0 auto;
+  max-width: 80ch;
+  padding: 1rem;
 }
