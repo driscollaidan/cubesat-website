@@ -1,5 +1,4 @@
 ---
-import Social from './Social.astro';
 ---
 <style>
   footer {
@@ -7,10 +6,15 @@ import Social from './Social.astro';
     gap: 1rem;
     margin-top: 2rem;
   }
+  a {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #4c1d95;
+    text-decoration: none;
+  }
 </style>
 
 <footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+  <p>Visit the legacy website: https://apexsat.space/</p>
+  <p>CubeSat GitHub Repository: https://github.com/apexsat/</p>
 </footer>
