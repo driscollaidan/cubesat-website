@@ -1,0 +1,49 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+import '../styles/global.css';
+
+const pageTitle = "Project Timeline";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<Header />
+    	<h1>{pageTitle}</h1>
+		<p>
+            Future Work and Schedule
+
+            The APEx team is currently performing system architecture trade studies and selecting components, moving towards a more complete overall design of the satellite. Current challenges include selecting a propellant flow meter and tank gauging system, designing a power and control board for the PMPD thruster, and defining thermal operating environments and control methods. The thruster prototype is still undergoing geometry optimization and propellant feed system design.
+
+            Future Timeline
+
+            Program Management Review, August 2025
+            * Discussion of overall satellite design.
+
+            Preliminary Design Review, November 2025
+            * Have early versions of avionics and software undergoing testing.
+            * Detailed spacecraft design concepts ready.
+            * Major subsystem components selected.
+
+            Critical Design Review, November 2026
+            * All subsystems will each have analyses complete if applicable
+            * Subsystem hardware and software will be undergoing verification and testing
+
+            Flight Selection Review, January 2027
+            * Subsystem prototype hardware ready to present
+            * Engineering model complete
+
+            Launch, Q2 2029
+            * If selected after FSR, spacecraft is expected to be prepared for launch
+        </p>
+    	<Footer />
+	</body>
+</html>

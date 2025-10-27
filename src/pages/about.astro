@@ -1,5 +1,9 @@
 ---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 
+import '../styles/global.css';
+const pageTitle = "About Us";
 ---
 
 <html lang="en">
@@ -8,9 +12,12 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>About Us</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<h1>About Us</h1>
+		<Header />
+    	<h1>{pageTitle}</h1>
+		<p>Ascent Pulse-MPD Experiment (APEx) is a project to space test a new type of Pulse MPD and to get more data about the thruster.</p>
+		<Footer />
 	</body>
 </html>
