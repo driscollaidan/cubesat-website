@@ -1,1 +1,2 @@
 https://github.com/driscollaidan/cubesat-website.git
+cubesat-website.netlify.app
