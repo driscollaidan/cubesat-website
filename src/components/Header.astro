@@ -3,49 +3,51 @@ import Navigation from './Navigation.astro';
 import logo from '../assets/missionpatchclear.png';
 ---
 <header class="main-header">
-  <div class="header-top">
-    <img src={logo.src} alt="CubeSat logo" class="cubesat-logo" />
-    <h1>Purdue University: CubeSat</h1>
+  <div class="header-inner">
+    <div class="header-top">
+      <img src={logo.src} alt="CubeSat logo" class="cubesat-logo" />
+      <h1>Purdue University: CubeSat</h1>
+    </div>
+    <nav>
+      <Navigation />
+    </nav>
   </div>
-  <nav>
-    <Navigation />
-  </nav>
 </header>
 
 <style>
-header,
-.main-header,
-nav {
-  width: 100vw; /* force full viewport width */
-  max-width: none;
-  margin-left: calc(50% - 50vw);
-}
-
 .main-header {
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* full-width header */
   background-color: #000;
   color: #fff;
   border-bottom: 1px solid #222;
 }
 
+/* constrain header content to match page width */
+.header-inner {
+  max-width: 80ch;     /* match .main-content width */
+  margin: 0 auto;      /* center it on the page */
+  padding: 0 1rem;     /* same horizontal padding */
+}
+
+/* logo + title row */
 .header-top {
   display: flex;
-  align-items: center;        /* vertical centering */
-  justify-content: flex-start;    /* center horizontally on the page */
-  gap: 1rem;                  /* space between image and text */
+  align-items: center;
+  justify-content: flex-start; /* left-aligned within the centered content */
+  gap: 1rem;
   padding: 0.5rem 0;
 }
 
 .cubesat-logo {
   width: 75px;
   height: 75px;
-  object-fit: contain;        /* keeps the patch round and neat */
+  object-fit: contain;
 }
 
 .header-top h1 {
   font-size: 1.4rem;
   font-weight: 600;
-  margin: 0;                  /* prevents extra vertical offset */
+  margin: 0;
 }
-
 </style>
