@@ -5,7 +5,7 @@ import logo from '../assets/missionpatchclear.png';
 <header class="main-header">
   <div class="header-top">
     <img src={logo.src} alt="CubeSat logo" class="cubesat-logo" />
-    <h1>Purdue University: CubeSat Launch</h1>
+    <h1>Purdue University: CubeSat</h1>
   </div>
   <nav>
     <Navigation />
@@ -30,13 +30,22 @@ nav {
 
 .header-top {
   display: flex;
-  align-items: left;
-  justify-content: center;
+  align-items: center;        /* vertical centering */
+  justify-content: flex-start;    /* center horizontally on the page */
+  gap: 1rem;                  /* space between image and text */
   padding: 0.5rem 0;
 }
 
 .cubesat-logo {
-  width: 45px;
-  height: 45px;
+  width: 75px;
+  height: 75px;
+  object-fit: contain;        /* keeps the patch round and neat */
 }
+
+.header-top h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;                  /* prevents extra vertical offset */
+}
+
 </style>
