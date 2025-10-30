@@ -2,52 +2,70 @@
 import Navigation from './Navigation.astro';
 import logo from '../assets/missionpatchclear.png';
 ---
+
 <header class="main-header">
-  <div class="header-inner">
-    <div class="header-top">
-      <img src={logo.src} alt="CubeSat logo" class="cubesat-logo" />
-      <h1>Purdue University: CubeSat</h1>
+  <!-- Dark top bar for logo/title -->
+  <div class="header-top-bar">
+    <div class="header-inner">
+      <div class="header-top">
+        <img src={logo.src} alt="CubeSat logo" class="cubesat-logo" />
+        <h1>APEx: ASCENT Propulsion Experiment</h1>
+      </div>
     </div>
-    <nav>
-      <Navigation />
-    </nav>
   </div>
+
+  <!-- Full-width navigation bar below -->
+  <nav>
+    <Navigation />
+  </nav>
 </header>
 
 <style>
+/* Full header wrapper */
 .main-header {
   width: 100vw;
-  margin-left: calc(50% - 50vw); /* full-width header */
-  background-color: #000;
+  margin-left: calc(50% - 50vw); 
   color: #fff;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #1f1f1f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* constrain header content to match page width */
+/* --- Top Bar (logo/title section) --- */
+.header-top-bar {
+  background-color: #060606;
+  border-bottom: 1px solid #1a1a1a; 
+  width: 100%;
+}
+
+/* Inner content container (matches main content width) */
 .header-inner {
-  max-width: 80ch;     /* match .main-content width */
-  margin: 0 auto;      /* center it on the page */
-  padding: 0 1rem;     /* same horizontal padding */
+  max-width: 100ch; 
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
 }
 
-/* logo + title row */
+/* Logo and title row */
 .header-top {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* left-aligned within the centered content */
+  justify-content: flex-start;
   gap: 1rem;
-  padding: 0.5rem 0;
 }
 
+/* Mission patch logo */
 .cubesat-logo {
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
 }
 
+/* Mission title */
 .header-top h1 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   margin: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 </style>
+

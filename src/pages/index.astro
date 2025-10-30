@@ -1,60 +1,81 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
-import '../styles/global.css';
+import "../styles/global.css";
+import "../styles/Hero.css";
+import "../styles/Sections.css";
 
-import conops_image from '../assets/OverallMissionCONOPS.png';
-
-const pageTitle = "Home";
+import heroImage from "../assets/indexheroimage.png";
+import missionImage from "../assets/missionImage.jpg";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <title>Purdue University: APEx CubeSat</title>
   </head>
+
   <body>
     <Header />
 
-    <main class="main-content">
-      <h1>{pageTitle}</h1>
-		<p>
-			Mission Objectives
+    <!-- HERO SECTION -->
+    <section class="hero" style={`background-image: url(${heroImage.src});`}>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Purdue University:</h1>
+		<h1>APEx CubeSat</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        </p>
+      </div>
+    </section>
 
-			MO.1
-			Operate the PMPD propulsion system in LEO to execute an orbit-raising or lowering maneuver.
+    <!-- MISSION SUMMARY SECTION -->
+    <section class="mission-summary">
+      <div class="summary-left">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+		  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+		  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
 
-			MO.2
-			Determine the key performance metrics of the PMPD system in LEO including impulse bit, specific impulse, and total efficiency of power to thrust conversion.
+      <div class="summary-right">
+        <ul>
+          <li><strong>Type</strong><br />CubeSat</li>
+          <li><strong>Launch</strong><br />TBD</li>
+          <li><strong>Target</strong><br />Low Earth Orbit (LEO)</li>
+          <li>
+            <strong>Objective</strong><br />Objective Statement
+          </li>
+        </ul>
+      </div>
+    </section>
 
-			MO.3
-			Continuously record the propulsion system health metrics during thruster operation including average power consumption, propellant injector temperature, propellant tank level, and current/voltage waveforms for the discharge and igniter circuits.
+    <!-- DEEP DIVE SECTION -->
+    <section class="mission-details">
+      <div class="details-left">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+		  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+		  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+     	  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+		  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
 
-			Overall CONOPS and Experiment Plan
-
-			FE.1 (1.5 hours)
-			Thruster checkouts
-			* Fire single prograde pulse
-			* Measure thruster health metrics (voltage and current waveforms)
-			* Downlink results + wait to proceed
-
-			FE.2 (24 hours)
-			Short-duration performance characterization
-			Repeatedly pulse thruster and coast to recharge
-			Gather data to allow for performance metrics (impulse bit, specific impulse, total efficiency)
-
-			FE.3 (1-2 months)
-			Long-duration performance characterization
-			* Pulse 1 million times, in repeated orbit raising and lowering maneuvers
-			* Stop periodically for systems check, data downlink, and orbit characterization
-			* Collect health and performance metrics to reduce uncertainty for performance parameters and monitor the change in thruster behavior over its lifetime.
-		</p>
-      <img src={conops_image.src} alt="Mission ConOps" style="width:100%; max-width:800px; display:block; margin:auto;" />
-    </main>
+      <div class="details-right">
+        <img src={missionImage.src} alt="APEx CubeSat render" />
+      </div>
+    </section>
 
     <Footer />
   </body>

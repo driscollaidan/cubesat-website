@@ -1,7 +1,10 @@
-https://github.com/driscollaidan/cubesat-website.git
-cubesat-website.netlify.app
+PROJECT GITHUB. https://github.com/driscollaidan/cubesat-website.git
+LIVE VERSION.   cubesat-website.netlify.app
 
-https://science.nasa.gov/mission/msl-curiosity/
-https://science.nasa.gov/mission/mars-2020-perseverance/
+HOSTING SITE.   https://app.netlify.com/projects/cubesat-website/overview
 
-https://apexsat.space/
+REFERENCE.      https://science.nasa.gov/mission/msl-curiosity/
+                https://science.nasa.gov/mission/mars-2020-perseverance/
+
+LEGACY SITE.    https://apexsat.space/
+
