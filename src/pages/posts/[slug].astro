@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('posts'))
+    .filter(post => !post.data.draft)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  return posts.map((post, index) => ({
+    params: { slug: post.slug },
+    props: {
+      post,
+      prevPost: index < posts.length - 1 ? posts[index + 1] : null,
+      nextPost: index > 0 ? posts[index - 1] : null,
+    },
+  }));
+}
+
+const { post, prevPost, nextPost } = Astro.props;
+const { Content } = await post.render();
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + '/';
+const { title, pubDate, tags = [], author } = post.data;
+const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<BaseLayout title={`${title} | Purdue APEx CubeSat`}>
+  <article class="blog-post">
+    <h1>{title}</h1>
+    <p class="post-meta">{formattedDate}{author ? ` — ${author}` : ''}</p>
+
+    {tags.length > 0 && (
+      <p class="post-tags">
+        {tags.map((tag, i) => (
+          <>
+            <a class="tag-link" href={`${base}tags/${tag}/`}>#{tag}</a>
+            {i < tags.length - 1 && <span> </span>}
+          </>
+        ))}
+      </p>
+    )}
+
+    <Content />
+
+    <div class="pagination">
+      {prevPost ? (
+        <a href={`${base}posts/${prevPost.slug}/`} class="button inline prev">
+          ← Previous
+        </a>
+      ) : <span></span>}
+
+      {nextPost && (
+        <a href={`${base}posts/${nextPost.slug}/`} class="button inline next">
+          Next →
+        </a>
+      )}
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+.post-tags .tag-link {
+  color: var(--accent, #ff6b4a);
+  text-decoration: none;
+}
+.post-tags .tag-link:hover {
+  text-decoration: underline;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.pagination .button {
+  color: var(--accent, #ff6b4a);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.pagination .button:hover {
+  background-color: var(--accent, #ff6b4a);
+  color: white;
+}
+</style>

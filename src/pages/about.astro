@@ -1,23 +1,221 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-
-import '../styles/global.css';
-const pageTitle = "About Us";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import placeholder_headshot from "../assets/placeholder_headshot.png";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Header />
-    	<h1>{pageTitle}</h1>
-		<p>Ascent Pulse-MPD Experiment (APEx) is a project to space test a new type of Pulse MPD and to get more data about the thruster.</p>
-		<Footer />
-	</body>
-</html>
+<BaseLayout title="About | Purdue APEx CubeSat">
+  <div class="content-container">
+
+    <!-- Intro -->
+    <section class="intro">
+        <br>
+      <h1>About the APEx Team</h1>
+      <p>
+        The mission involves coordination between the <strong>Electric Propulsion and Plasma Laboratory (EPPL)</strong>
+        and the <strong>CubeSat Design/Build/Test course</strong> at Purdue University.
+      </p>
+
+      <p>
+        <strong>EPPL</strong> provides vacuum chambers and diagnostic equipment for testing a variety of electric propulsion devices,
+        specializing in microwave and laser diagnostics of plasmas. They are responsible for PMPD development and testing.
+      </p>
+
+      <p>
+        <strong>CubeSat Lab</strong> consists of 25+ multidisciplinary students with Phase A design experience from the FLaC-Sat Mission.
+        The CubeSat Lab team is responsible for mission and satellite bus development, integration, and test.
+      </p>
+
+      <ul>
+        <li>Vacuum chamber testing & plasma diagnostics (EPPL)</li>
+        <li>System engineering, bus design, and integration (CubeSat Lab)</li>
+        <li>Project management and cross-team coordination</li>
+      </ul>
+    </section>
+</div>
+<div class="content-container">
+    <!-- Leadership -->
+    <section class="leadership">
+    <div class="little-break"></div>
+<h1 style="text-align: center;">Mission Leadership</h1>
+
+      <div class="card-grid">
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Dr. Alex Shasurin headshot" />
+          <h3>Dr. Alex Shasurin</h3>
+          <p>Professor & Faculty Advisor</p>
+        </div>
+
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Josh Williams headshot" />
+          <h3>Josh Williams</h3>
+          <p>Chief Engineer</p>
+        </div>
+
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Nick Babusis headshot" />
+          <h3>Nick Babusis</h3>
+          <p>Project Manager</p>
+        </div>
+      </div>
+    </section>
+</div>
+<div class="content-container">
+    <!-- Subteams -->
+    <section class="subteams">
+    <div class="little-break"></div>
+<h1 style="text-align: center;">Subteam Leads</h1>
+
+      <div class="card-grid">
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Payload Integration headshot" />
+          <h3>Payload Integration (PAY)</h3>
+          <p>Lead: Aksel Veak</p>
+        </div>
+
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Ground Support Equipment headshot" />
+          <h3>Ground Support Equipment (GSE)</h3>
+          <p>Lead: Carson Rearick</p>
+        </div>
+
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Analysis headshot" />
+          <h3>Analysis (ANS)</h3>
+          <p>Lead: Josh Williams</p>
+        </div>
+
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Software headshot" />
+          <h3>Software (SOFT)</h3>
+          <p>Lead: Zuzu Alsuwaidi</p>
+        </div>
+
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Structures headshot" />
+          <h3>Structures (STRUC)</h3>
+          <p>Lead: Angus Wai</p>
+        </div>
+
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Electrical Power System headshot" />
+          <h3>Electrical Power System (EPS)</h3>
+          <p>Lead: Zach Spurgeon</p>
+        </div>
+
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Guidance Navigation Control headshot" />
+          <h3>Guidance, Navigation & Control (GNC)</h3>
+          <p>Lead: Toe Lyan</p>
+        </div>
+
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Communications headshot" />
+          <h3>Communications (COMM)</h3>
+          <p>Lead: Will Hagan</p>
+        </div>
+
+        <div class="team-card">
+          <img src={placeholder_headshot.src} alt="Command Data Handling headshot" />
+          <h3>Command & Data Handling (CDH)</h3>
+          <p>Lead: Arthur Prudius</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .little-break {
+    height: 1rem;
+  }
+  /* Centered white band */
+  .content-container {
+    width: 66%;
+    max-width: 1100px;
+    margin: 4rem auto;
+    background: #fff;
+    padding: 0rem 3.5rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.06);
+  }
+
+  /* Intro */
+  .content-container h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: left;
+    color: var(--accent, #002b5c);
+  }
+  .intro p {
+    margin: 0 0 1rem 0;
+    color: #222;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  .intro ul {
+    margin-top: 0.5rem;
+    padding-left: 1.25rem;
+    color: #333;
+  }
+
+  /* Headings */
+  h2 {
+    text-align: center;
+    margin-top: 3rem;
+    color: var(--accent, #002b5c);
+    font-size: 1.6rem;
+  }
+
+  /* Unified card grid */
+  .card-grid {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  /* Team card (used for all) */
+  .team-card {
+    background: #f6f9fb;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+  }
+  .team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+  .team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 0.85rem;
+    display: block;
+  }
+  .team-card h3 {
+    margin: 0.25rem 0;
+    color: #022b50;
+    font-size: 1rem;
+  }
+  .team-card p {
+    margin: 0;
+    color: #444;
+    font-size: 0.92rem;
+  }
+
+  /* Responsive breakpoints */
+  @media (max-width: 1000px) {
+    .content-container { width: 80%; padding: 2.5rem; }
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .content-container { width: 94%; padding: 1.75rem; }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+</style>

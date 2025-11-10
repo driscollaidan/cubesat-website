@@ -3,13 +3,11 @@ import logo from "../assets/missionpatchclear.png";
 ---
 <footer>
   <div class="footer-container">
-    <!-- LEFT: Logo + Text -->
     <div class="footer-left">
       <img src={logo.src} alt="APEx CubeSat Logo" class="footer-logo" />
       <span>© 2025 Purdue University: APEx CubeSat</span>
     </div>
 
-    <!-- RIGHT: Links -->
     <div class="footer-right">
       <a href="https://apexsat.space/" target="_blank" rel="noopener noreferrer">Legacy Website</a>
       <a href="https://github.com/apexsat/" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
@@ -19,10 +17,17 @@ import logo from "../assets/missionpatchclear.png";
 
 <style>
 footer {
-  background-color: #1f1f1f; /* charcoal background */
+  background-color: #1f1f1f;
   padding: 1rem 2rem;
   color: white;
   font-family: "Open Sans", Arial, sans-serif;
+  margin-top: auto; /* ensures it sits at bottom when content is short */
+}
+
+html, body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-container {
@@ -47,8 +52,8 @@ footer {
 
 .footer-right a {
   color: #ffffff;
-  font-weight: 400; /* normal weight */
-  font-size: 0.95rem; /* slightly smaller */
+  font-weight: 400;
+  font-size: 0.95rem;
   text-decoration: underline;
   margin-left: 1rem;
   transition: color 0.2s ease;
@@ -59,7 +64,7 @@ footer {
 }
 
 .footer-right a:hover {
-  color: #d1d5db; /* slightly lighter on hover */
+  color: #d1d5db;
 }
 
 @media (max-width: 600px) {

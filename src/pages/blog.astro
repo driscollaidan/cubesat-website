@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostList from "../components/PostList.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("posts"))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Blog | Purdue APEx CubeSat">
+  <br>
+      <div class="posts-container">
+          <PostList posts={posts} />
+      </div>
+</BaseLayout>
+
+<style>
+  .posts-container{
+    width: 60%;
+    margin: 0 auto;
+}
+</style>

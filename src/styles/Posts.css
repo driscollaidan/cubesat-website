@@ -1,0 +1,165 @@
+.posts-section,
+.main-content.posts {
+  margin: 0 auto;
+  max-width: 80ch;
+  padding: 1.5rem;
+}
+
+/* The "card" styling for each post preview (targets .post on-list) */
+.post.on-list {
+  background: #ffffff;
+  border-left: 4px solid var(--accent, #ff6b4a);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.post.on-list:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.09);
+}
+
+/* Titles inside the cards */
+.post.on-list .post-title {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  color: #0b0b0b;
+}
+
+.post.on-list .post-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post.on-list .post-title a:hover {
+  color: var(--accent, #ff6b4a);
+  text-decoration: underline;
+}
+
+/* Meta line (date / author) */
+.post.on-list .post-meta {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.6rem;
+}
+
+/* Small styling for the description preview */
+.post.on-list .post-content p,
+.post.on-list .post-desc {
+  margin: 0 0 0.75rem 0;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Cover image if present */
+.post.on-list .post-cover img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 0.75rem 0;
+}
+
+/* Tags */
+.post.on-list .post-tags,
+.post .post-tags {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.post.on-list .post-tags a,
+.post .post-tags a,
+.tag-link {
+  color: var(--accent, #ff6b4a);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Read more button - keep your .button classes but add a minimal inline style helper */
+.post.on-list .read-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.35rem 0.65rem;
+}
+
+/* Individual post page styling (wrap in the site's main white card) */
+.blog-post {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+  margin: 2rem auto;
+  max-width: 80ch;
+}
+
+.blog-post h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #0b0b0b;
+}
+
+.blog-post .post-meta {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post .post-tags {
+  margin-bottom: 1.25rem;
+}
+
+/* Markdown rendering (content inside <Content />) - match site typography */
+.blog-post :where(h2, h3, h4) {
+  color: #111827;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+
+.blog-post p {
+  color: #333;
+  line-height: 1.8;
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+}
+
+/* Code blocks and pre */
+.blog-post pre {
+  background: #0b0b0b;
+  color: #e6eef8;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+/* Images in posts */
+.blog-post img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* Pagination area under post */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pagination .button {
+  text-decoration: none;
+  border: 1px solid #e5e7eb;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background: #fff;
+}

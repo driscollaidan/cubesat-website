@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostList from "../../components/PostList.astro";
+---
+
+<BaseLayout title="Blog | Purdue APEx CubeSat">
+  <section class="posts">
+    <h1 class="posts-title">Posts</h1>
+    <PostList />
+  </section>
+</BaseLayout>
+
+<style>
+  .posts {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .posts-title {
+    position: relative;
+    color: var(--accent);
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 15px;
+    border-bottom: 3px dotted var(--accent);
+  }
+
+  .posts-title::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    display: block;
+    width: 100%;
+    border-bottom: 3px dotted var(--accent);
+  }
+</style>

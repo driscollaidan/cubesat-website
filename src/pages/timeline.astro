@@ -1,49 +1,256 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-
-import '../styles/global.css';
-
-const pageTitle = "Project Timeline";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CONOPS from "../assets/OverallMissionCONOPS.png";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Header />
-    	<h1>{pageTitle}</h1>
-		<p>
-            Future Work and Schedule
+<BaseLayout title="Project Timeline | Purdue APEx CubeSat">
+  <div class="page-content">
 
-            The APEx team is currently performing system architecture trade studies and selecting components, moving towards a more complete overall design of the satellite. Current challenges include selecting a propellant flow meter and tank gauging system, designing a power and control board for the PMPD thruster, and defining thermal operating environments and control methods. The thruster prototype is still undergoing geometry optimization and propellant feed system design.
+    <!-- Mission Timeline -->
+    <section class="timeline-section">
 
-            Future Timeline
+      <div class="timeline-horizontal">
+        <div class="timeline-track"></div>
 
-            Program Management Review, August 2025
-            * Discussion of overall satellite design.
+        <div class="timeline-card">
+          <h3>Program Management Review</h3>
+          <span class="date">Aug 2025</span>
+          <p>Discussion of overall satellite design.</p>
+        </div>
 
-            Preliminary Design Review, November 2025
-            * Have early versions of avionics and software undergoing testing.
-            * Detailed spacecraft design concepts ready.
-            * Major subsystem components selected.
+        <div class="timeline-card">
+          <h3>Preliminary Design Review</h3>
+          <span class="date">Nov 2025</span>
+          <p>Avionics and software testing, detailed design concepts ready.</p>
+        </div>
 
-            Critical Design Review, November 2026
-            * All subsystems will each have analyses complete if applicable
-            * Subsystem hardware and software will be undergoing verification and testing
+        <div class="timeline-card">
+          <h3>Critical Design Review</h3>
+          <span class="date">Nov 2026</span>
+          <p>Subsystem analyses complete; verification in progress.</p>
+        </div>
 
-            Flight Selection Review, January 2027
-            * Subsystem prototype hardware ready to present
-            * Engineering model complete
+        <div class="timeline-card">
+          <h3>Flight Selection Review</h3>
+          <span class="date">Jan 2027</span>
+          <p>Subsystem prototypes presented, engineering model complete.</p>
+        </div>
 
-            Launch, Q2 2029
-            * If selected after FSR, spacecraft is expected to be prepared for launch
-        </p>
-    	<Footer />
-	</body>
-</html>
+        <div class="timeline-card">
+          <h3>Launch</h3>
+          <span class="date">Q2 2029</span>
+          <p>Spacecraft prepared for launch if selected post-FSR.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Work -->
+    <section class="future-work">
+      <h2>Future Work</h2>
+
+      <p>
+        The APEx team is currently performing system architecture trade studies and component selection,
+        moving toward a more complete overall design of the satellite.
+      </p>
+      <p>Current challenges include:</p>
+      <ul>
+        <li>Selecting a propellant flow meter and tank gauging system</li>
+        <li>Designing a power and control board for the PMPD thruster</li>
+        <li>Defining thermal operating environments and control methods</li>
+      </ul>
+      <p>
+        The thruster prototype is still undergoing geometry optimization and propellant feed system design.
+      </p>
+    </section>
+
+    <!-- CONOPS -->
+    <figure class="conops-figure">
+      <img src={CONOPS.src} alt="Overall Mission CONOPS diagram" />
+      <figcaption>Figure: Overall Mission CONOPS</figcaption>
+    </figure>
+
+  </div>
+</BaseLayout>
+
+<style>
+/* --- General Layout --- */
+.page-content {
+  background: #fff;
+  color: #111;
+  padding: 4rem 10%;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+h1, h2 {
+  color: #0b0b0b;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+/* --- Timeline Section --- */
+.timeline-section {
+  width: 100%;
+  text-align: center;
+}
+
+.timeline-track {
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #e5e7eb;
+  z-index: 0;
+}
+.timeline-horizontal {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* ensures equal height cards */
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+}
+
+.timeline-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  flex: 0 0 220px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.timeline-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  top: -1.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.9rem;
+  height: 0.9rem;
+  background: var(--accent, #004aad);
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.timeline-card h3 {
+  font-size: 1.15rem;
+  color: #111;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-card .date {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+.timeline-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* --- CONOPS Figure  --- */
+.conops-figure {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 1100px; /* matches Future Work width */
+  background: #f9fafc;
+  border: 3px solid var(--accent, #004aad);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+}
+
+.conops-figure img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.conops-figure figcaption {
+  margin-top: 1rem;
+  color: #444;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* --- Future Work --- */
+/* --- Future Work (now wider and cleaner) --- */
+.future-work {
+  width: 100%;
+  max-width: 1100px;  /* wider than before */
+  background: #fafafa;
+  border-left: 5px solid var(--accent, #004aad);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  padding: 3rem 3.5rem;
+  line-height: 1.8;
+}
+
+.future-work ul {
+  list-style: none;
+  margin: 1rem 0 1.5rem 0;
+  padding: 0;
+}
+
+.future-work li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.future-work li::before {
+  content: "•";
+  color: var(--accent, #004aad);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .page-content {
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
+
+  .timeline-horizontal {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .timeline-card {
+    flex: 0 0 250px;
+    scroll-snap-align: start;
+  }
+
+  .future-work {
+    padding: 2rem 1.5rem;
+  }
+}
+</style>
